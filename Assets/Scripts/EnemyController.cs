@@ -15,8 +15,8 @@ public class EnemyController : MonoBehaviour {
 	public int curHp = 100;
 	int fullHp;
 	int damageHp = 10;
-//★	public Image hpGauge;
-//	GameObject hp;
+	public Image hpGauge;
+	GameObject hp;
 
 
 	public float enemySpeed;
@@ -38,7 +38,7 @@ public class EnemyController : MonoBehaviour {
 
 		enemyAnimation = GetComponentInChildren<Animation>();
 
-//★		hp = hpGauge.transform.parent.gameObject;
+		hp = hpGauge.transform.parent.gameObject;
 	}
 	// Update is called once per frame
 	void Update () {
@@ -63,7 +63,7 @@ public class EnemyController : MonoBehaviour {
 
 		if (other.gameObject.tag == "PlayerBullet") {
 			curHp -= damageHp;
-//★			hpGauge.fillAmount = (float)curHp / fullHp;
+			hpGauge.fillAmount = (float)curHp / fullHp;
 			if (curHp <= 0) {
 				Die ();
 			}

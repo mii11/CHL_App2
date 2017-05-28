@@ -7,7 +7,7 @@ public class BulletController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Destroy (this.gameObject, 0.4f);		
+		Destroy (this.gameObject, 0.8f);		
 	}
 
 	// Update is called once per frame
