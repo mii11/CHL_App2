@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour {
 	public GameObject coreObj;
 	Animation enemyAnimation;
 	BoxCollider enemyBoxCollider;
-	SphereCollider coreCollider;
+	CapsuleCollider coreCapsuleCollider;
 	bool isDead;
 
 	//HP
@@ -34,7 +34,7 @@ public class EnemyController : MonoBehaviour {
 		fullHp = curHp;
 		isDead = false;
 		enemyBoxCollider = GetComponent<BoxCollider> ();
-		coreCollider = coreObj.GetComponent<SphereCollider> ();
+		coreCapsuleCollider = coreObj.GetComponent<CapsuleCollider> ();
 
 		enemyAnimation = GetComponentInChildren<Animation>();
 
@@ -89,7 +89,7 @@ public class EnemyController : MonoBehaviour {
 
 			}
 			Destroy (enemyBoxCollider);
-			Destroy (coreCollider);
+			Destroy (coreCapsuleCollider);
 //★			Manager.instance.curEnemyNum -= 1;
 			isDead = true;
 		}
