@@ -175,6 +175,11 @@ MonoBehaviour:
   speedX: 0.2
   speedY: 0.1
   speedZ: 0.1
+--- !u!1 &406851831 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1535959449979626, guid: b133972ece95ea148910b9a7c2d445e8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1913124561}
 --- !u!1 &667969404 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1293117303839440, guid: 16f7da92662890f43bb0d2a10cefd301,
@@ -411,12 +416,21 @@ Prefab:
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 49a0e923d39ec3c4c8bb97699e2f2903, type: 2}
+      propertyPath: m_Name
+      value: Player_FreeLookCameraRig
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 49a0e923d39ec3c4c8bb97699e2f2903, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1439425908 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400004, guid: 49a0e923d39ec3c4c8bb97699e2f2903, type: 2}
+  m_PrefabInternal: {fileID: 1439425907}
+--- !u!20 &1439425909 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 2000000, guid: 49a0e923d39ec3c4c8bb97699e2f2903,
+    type: 2}
   m_PrefabInternal: {fileID: 1439425907}
 --- !u!1 &1891345226
 GameObject:
@@ -549,6 +563,25 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b133972ece95ea148910b9a7c2d445e8, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1913124563 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1339764279421644, guid: b133972ece95ea148910b9a7c2d445e8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1913124561}
+--- !u!114 &1913124564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1913124563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 305d9c0997f3cf948bcbc9d02129ce82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 1744425104478314, guid: 5c52750ca7d42024db591ffbc48bcaf2, type: 2}
+  bulletExit: {fileID: 406851831}
+  playerCamera: {fileID: 1439425909}
 --- !u!1 &2143212002
 GameObject:
   m_ObjectHideFlags: 0
