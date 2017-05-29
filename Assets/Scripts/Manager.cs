@@ -5,9 +5,9 @@ using UnityEngine;
 public class Manager : MonoBehaviour {
 	public static Manager instance;
 
-	public int curPlayerNum;
+	public int curPlayerLife;
 	public int curEnemyNum;
-	int totalPlayerNum = 3;
+	int PlayerLife = 3;
 	int totalEnemyNum = 50;
 	int totalStagesNum = 1;
 
@@ -30,7 +30,7 @@ public class Manager : MonoBehaviour {
 		}
 		DontDestroyOnLoad (this);
 
-		curPlayerNum = totalPlayerNum;
+		curPlayerLife = PlayerLife;
 		curEnemyNum = totalEnemyNum;
 	}
 
