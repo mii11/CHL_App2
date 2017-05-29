@@ -6,7 +6,8 @@ public class Manager : MonoBehaviour {
 	public static Manager instance;
 
 	public int curPlayerLife;
-	public int curEnemyNum;
+	public int curEnemyLife;
+	public int generateEnemyNum;
 	int PlayerLife = 3;
 	int totalEnemyNum = 50;
 	int totalStagesNum = 1;
@@ -31,7 +32,8 @@ public class Manager : MonoBehaviour {
 		DontDestroyOnLoad (this);
 
 		curPlayerLife = PlayerLife;
-		curEnemyNum = totalEnemyNum;
+		curEnemyLife = totalEnemyNum;
+		generateEnemyNum = 0;
 	}
 
 	// Update is called once per frame
