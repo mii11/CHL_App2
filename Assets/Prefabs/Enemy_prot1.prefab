@@ -1857,7 +1857,8 @@ MonoBehaviour:
   coreObj: {fileID: 1399095902819068}
   curHp: 100
   hpGauge: {fileID: 114957204120716214}
-  enemySpeed: 0.8
+  explosion: {fileID: 0}
+  enemySpeed: 0.3
 --- !u!114 &114503048706499612
 MonoBehaviour:
   m_ObjectHideFlags: 1

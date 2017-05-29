@@ -1,14 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class EnemyController1 : MonoBehaviour {
-	//敵
-	public GameObject enemy;
-	float enemyInterval;
-
 	public GameObject coreObj;
 	Animation enemyAnimation;
 	BoxCollider enemyBoxCollider;
@@ -40,17 +36,18 @@ public class EnemyController1 : MonoBehaviour {
 	void Start () {
 		fullHp = curHp;
 		isDead = false;
+		motionInterval = 0.0f;
+
 		enemyBoxCollider = GetComponent<BoxCollider> ();
 		coreCapsuleCollider = coreObj.GetComponent<CapsuleCollider> ();
 
 		enemyAnimation = GetComponentInChildren<Animation>();
 
-		enemyInterval = 0.0f;
-		motionInterval = 0.0f;
 		enemyHp = hpGauge.transform.parent.gameObject;
 //		enemySpeed = 0.8f;
 
 	}
+
 	// Update is called once per frame
 	void Update () {
 
@@ -69,24 +66,8 @@ public class EnemyController1 : MonoBehaviour {
 			}
 		}
 
-//		//敵を生成
-//		enemyInterval += Time.deltaTime;
-//		if (enemyInterval >= 5.0f) {
-//			GenerateEnemy ();
-//		}
 	}
 
-//	//敵を生成
-//	void GenerateEnemy(){
-//		Quaternion q = Quaternion.Euler (0, 180, 0);
-//
-//		//		print ("enemyIntervalは、" + enemyInterval);
-//		enemyInterval = 0.0f;
-//		//ランダムな場所に生成
-//		Instantiate (enemy, new Vector3 (Random.Range(-100, 100), transform.position.y, transform.position.z + 200), q);
-//		//自身の目の前に生成
-//		Instantiate(enemy, new Vector3(transform.position.x, transform.position.y, transform.position.z + 200), q);
-//	}
 
 	void OnTriggerEnter(Collider other){
 
@@ -121,7 +102,7 @@ public class EnemyController1 : MonoBehaviour {
 			Destroy (enemyBoxCollider);
 			Destroy (coreCapsuleCollider);
 			Destroy (enemyHp, 3.0f);
-			Manager.instance.curEnemyNum -= 1;
+			Manager.instance.curEnemyLife -= 1;
 			isDead = true;
 		}
 	}
@@ -130,23 +111,23 @@ public class EnemyController1 : MonoBehaviour {
 	//要編集！敵の移動(規則正しく動きすぎ	)
 	void EnemyMotion1(){
 		transform.Translate (-1 * transform.forward * Time.deltaTime * enemySpeed);	
+
 		motionInterval += Time.deltaTime;
-		print ("intervalは" + motionInterval + ": " + "前");
+//		print ("intervalは" + motionInterval + ": " + "前");
 		enemyAnimation.Play ("Walk");
 
 
 		if ((motionInterval >= 0.8f) && (motionInterval < 1.4f)) {
-			print ("右に移動");
+//			print ("右に移動");
 			transform.Translate (Vector3.right * Time.deltaTime * enemySpeed);
 			enemyAnimation.Play ("Walk");
 		}else if ((motionInterval >= 1.4f) && (motionInterval < 2.0f)) {
-			print ("左");
+//			print ("左");
 			transform.Translate (Vector3.left * Time.deltaTime * enemySpeed);
 			enemyAnimation.Play ("Walk");
 		}else if(motionInterval >= 2.0f){
 			motionInterval = 0.0f;			
 		} 
-
 	}
 		
 	//要編集！うまく、いってない

@@ -5,10 +5,6 @@ using UnityEngine.UI;
 using UnityEngine.AI;
 
 public class EnemyController2 : MonoBehaviour {
-	//敵
-	public GameObject enemy;
-	float enemyInterval;
-
 	public GameObject coreObj;
 	Animation enemyAnimation;
 	BoxCollider enemyBoxCollider;
@@ -54,7 +50,6 @@ public class EnemyController2 : MonoBehaviour {
 
 		enemyAnimation = GetComponentInChildren<Animation>();
 
-		enemyInterval = 0.0f;
 //		motionInterval = 0.0f;
 		enemyHp = hpGauge.transform.parent.gameObject;
 		enemySpeed = 0.8f;
@@ -176,7 +171,7 @@ public class EnemyController2 : MonoBehaviour {
 			Destroy (enemyBoxCollider);
 			Destroy (coreCapsuleCollider);
 			Destroy (enemyHp, 3.0f);
-			Manager.instance.curEnemyNum -= 1;
+			Manager.instance.curEnemyLife -= 1;
 			isDead = true;
 		}
 	}
