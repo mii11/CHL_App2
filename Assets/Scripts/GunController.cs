@@ -8,7 +8,6 @@ public class GunController : MonoBehaviour {
 	public GameObject bullet;
 	public GameObject bulletExit;
 	public Camera playerCamera;
-	//	public float speed = 20;
 
 
 	void start(){

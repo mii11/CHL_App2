@@ -90,7 +90,7 @@ public class EnemyController : MonoBehaviour {
 			}
 			Destroy (enemyBoxCollider);
 			Destroy (coreCapsuleCollider);
-//★			Manager.instance.curEnemyNum -= 1;
+			Manager.instance.curEnemyNum -= 1;
 			isDead = true;
 		}
 	}
