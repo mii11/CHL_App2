@@ -6,8 +6,17 @@ TagManager:
   tags:
   - Core
   - Enemy
-  - Gun
   - PlayerBullet
+  - PlayerGun
+  - LeftArm1
+  - RightArm1
+  - LeftArm2
+  - RightArm2
+  - LeftArm3
+  - RightArm3
+  - LeftArm4
+  - RightArm4
+  - EnemyHead
   layers:
   - Default
   - TransparentFX

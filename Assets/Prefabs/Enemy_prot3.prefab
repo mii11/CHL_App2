@@ -661,7 +661,7 @@ GameObject:
   - component: {fileID: 114870400718355274}
   m_Layer: 0
   m_Name: Enemy_prot3
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1904,6 +1904,7 @@ MonoBehaviour:
   coreObj: {fileID: 1936353021403264}
   curHp: 100
   hpGauge: {fileID: 114949151824473502}
+  explosion: {fileID: 100000, guid: 1e47e1a2302b340578c901da5181c6f1, type: 2}
   enemySpeed: 0.8
   rotateSpeed: 0.4
 --- !u!114 &114918022624228426
