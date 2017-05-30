@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour {
 	public GameObject enemy;
 	float enemyInterval;
 
-
 	void Start(){
 		enemyInterval = 0.0f;
 	}
@@ -66,5 +65,32 @@ public class PlayerController : MonoBehaviour {
 	void MoveRightLeft(float horizontal){
 		transform.Translate (horizontal * speedX, 0, 0);
 	}
+
+//あとで削除
+//	void OnTriggerEnter(Collider other){
+//		if (other.gameObject.tag == "Enemy") {
+//
+//
+//			print ("★★　自機に弾が当たった");
+//
+//			//弾があたれば体力を1減らす
+//			playerLife--;
+//			//sliderのvalueに、体力を代入する
+////			slider.value = playerLife;
+//			Instantiate (explosion, new Vector3 (transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+//			Destroy (other.gameObject);
+//
+//			//体力が0以下になれば、戦闘機が爆発
+//			if (playerLife <= 0) {
+//				Destroy (this.gameObject);
+//
+////				//ハイスコア更新
+////				ScoreController obj = GameObject.Find("Main Camera").GetComponent<ScoreController>();
+////				obj.SaveHighScore ();
+//			}
+//
+//		}	
+//	}
+
 
 }

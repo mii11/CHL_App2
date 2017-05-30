@@ -603,7 +603,7 @@ GameObject:
   - component: {fileID: 195552291717480016}
   m_Layer: 0
   m_Name: Enemy_prot2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1855,25 +1855,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coreObj: {fileID: 1195974981684602}
-  enemyAnimation: {fileID: 0}
-  enemyBoxCollider: {fileID: 0}
-  coreCapsuleCollider: {fileID: 0}
-  isDead: 0
-  explosion: {fileID: 1717213512574258, guid: 0f0cd1c0b2a12f043867906471c8c9cf, type: 2}
   curHp: 100
-  fullHp: 0
-  damageHp: 10
   hpGauge: {fileID: 114719025993613822}
-  enemyHp: {fileID: 0}
+  explosion: {fileID: 100000, guid: 1e47e1a2302b340578c901da5181c6f1, type: 2}
+  enemySpeed: 0.8
   wanderRadius: 8
   wanderTimer: 1
-  target: {fileID: 0}
   agentEnemy: {fileID: 195552291717480016}
-  timer: 0
-  enemySpeed: 0.8
-  rotateSpeed: 0.4
-  wayPoint: {x: 0, y: 0}
-  motionInterval: 0
 --- !u!114 &114595321095569242
 MonoBehaviour:
   m_ObjectHideFlags: 1

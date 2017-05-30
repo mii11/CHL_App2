@@ -22,6 +22,7 @@ public class EnemyController3 : MonoBehaviour {
 	public GameObject explosion;
 
 	public float enemySpeed;
+
 	public float rotateSpeed;
 	protected Vector2 wayPoint;
 	//★

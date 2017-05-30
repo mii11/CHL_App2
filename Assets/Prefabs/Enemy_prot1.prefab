@@ -71,7 +71,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1101793180625654
 GameObject:
   m_ObjectHideFlags: 1
@@ -907,11 +907,11 @@ GameObject:
   - component: {fileID: 114275206842078236}
   m_Layer: 0
   m_Name: Enemy_prot1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1973126712517878
 GameObject:
   m_ObjectHideFlags: 1
@@ -1853,11 +1853,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cccd6ab2da9288449a0752a1b2c8ac2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1938205431315102}
   coreObj: {fileID: 1399095902819068}
   curHp: 100
   hpGauge: {fileID: 114957204120716214}
-  explosion: {fileID: 0}
+  explosion: {fileID: 100000, guid: 1e47e1a2302b340578c901da5181c6f1, type: 2}
   enemySpeed: 0.3
 --- !u!114 &114503048706499612
 MonoBehaviour:

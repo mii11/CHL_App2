@@ -11,6 +11,10 @@ public class EnemyController1 : MonoBehaviour {
 	CapsuleCollider coreCapsuleCollider;
 	bool isDead;
 
+	public GameObject AttackCentreZone;
+	public GameObject AttackLeftZone;
+	public GameObject AttackRightZone;
+
 	//HP
 	public int curHp = 100;
 	int fullHp;
@@ -22,7 +26,6 @@ public class EnemyController1 : MonoBehaviour {
 	public GameObject explosion;
 
 	public float enemySpeed;
-
 
 	//★
 	//	//襲撃の間隔をあける
@@ -45,19 +48,21 @@ public class EnemyController1 : MonoBehaviour {
 
 		enemyHp = hpGauge.transform.parent.gameObject;
 //		enemySpeed = 0.8f;
-
+//		isAttackCentre = false;
 	}
 
 	// Update is called once per frame
 	void Update () {
+//		print ("curHp" + curHp);
+		motionInterval += Time.deltaTime;
 
-		if (enemyAnimation == true) {
-			if (curHp > 0) {
+		if (curHp > 0) {
+			if (enemyAnimation == true) {
 				switch (enemyAnimation.name) {
 				case "SPIDER":
-//					enemyAnimation.Play ("Idle");
-					EnemyMotion1();
+					enemyIdle ();
 					break;
+
 				case "":
 					break;
 				default:
@@ -68,9 +73,28 @@ public class EnemyController1 : MonoBehaviour {
 
 	}
 
+	public void attackCentreArm(){
+		enemyAnimation.CrossFadeQueued("Attack", 0.3F, QueueMode.PlayNow);
+	}
+
+	public void attackLeftArm(){
+		enemyAnimation.CrossFadeQueued("Attack_Left", 0.3F, QueueMode.PlayNow);
+	}
+
+	public void attackRightArm(){
+		enemyAnimation.CrossFadeQueued ("Attack_Right", 0.3f, QueueMode.PlayNow);
+	}
+
+
+	void enemyIdle(){
+		if (motionInterval >= 0.8f) {
+			enemyAnimation.PlayQueued("Idle");
+			motionInterval = 0;
+		}
+	}
+
 
 	void OnTriggerEnter(Collider other){
-
 		if (other.gameObject.tag == "PlayerBullet") {
 			curHp -= damageHp;
 			hpGauge.fillAmount = (float)curHp / fullHp;
@@ -80,16 +104,17 @@ public class EnemyController1 : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerExit(Collider other){
-
-	}
+//	void OnTriggerExit(Collider other){
+//
+//	}
 
 	public void Die(){
 		if (isDead == false) {
 			if (enemyAnimation == true) {
 				switch (enemyAnimation.name) {
 				case "SPIDER":
-					enemyAnimation.Play ("Death");
+//					enemyAnimation.PlayQueued ("Death");
+					enemyAnimation.CrossFadeQueued ("Death", 0.3f, QueueMode.PlayNow);
 					break;
 				case "":
 					Instantiate (explosion, transform.position, Quaternion.identity);
@@ -101,11 +126,15 @@ public class EnemyController1 : MonoBehaviour {
 			}
 			Destroy (enemyBoxCollider);
 			Destroy (coreCapsuleCollider);
-			Destroy (enemyHp, 3.0f);
+			Destroy (AttackCentreZone);
+			Destroy (AttackLeftZone);
+			Destroy (AttackRightZone);
+			Destroy (enemyHp, 5.0f);
 			Manager.instance.curEnemyLife -= 1;
 			isDead = true;
 		}
 	}
+
 
 
 	//要編集！敵の移動(規則正しく動きすぎ	)
@@ -114,17 +143,17 @@ public class EnemyController1 : MonoBehaviour {
 
 		motionInterval += Time.deltaTime;
 //		print ("intervalは" + motionInterval + ": " + "前");
-		enemyAnimation.Play ("Walk");
+		enemyAnimation.PlayQueued ("Walk");
 
 
 		if ((motionInterval >= 0.8f) && (motionInterval < 1.4f)) {
 //			print ("右に移動");
 			transform.Translate (Vector3.right * Time.deltaTime * enemySpeed);
-			enemyAnimation.Play ("Walk");
+			enemyAnimation.PlayQueued ("Walk");
 		}else if ((motionInterval >= 1.4f) && (motionInterval < 2.0f)) {
 //			print ("左");
 			transform.Translate (Vector3.left * Time.deltaTime * enemySpeed);
-			enemyAnimation.Play ("Walk");
+			enemyAnimation.PlayQueued ("Walk");
 		}else if(motionInterval >= 2.0f){
 			motionInterval = 0.0f;			
 		} 
