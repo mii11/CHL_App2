@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackLeft : MonoBehaviour {
-	public EnemyController1 enemyController1Script;
+public class AttackLeftZone : MonoBehaviour {
+	public GameObject enemyObj;
+	EnemyController1 enemyController1Script;
+
+	void Start () {
+		enemyController1Script = enemyObj.GetComponent<EnemyController1> ();
+	}
 
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "PlayerGun") {
 			enemyController1Script.attackLeftArm ();
-
-			print ("isAttackLeft のOnTrigger" );
 		}
 
 	}

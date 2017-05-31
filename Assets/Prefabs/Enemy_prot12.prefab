@@ -40,6 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4994199442951600}
   - component: {fileID: 65173963203037168}
+  - component: {fileID: 114140482602173050}
   m_Layer: 0
   m_Name: nogaD_R
   m_TagString: RightArm1
@@ -421,6 +422,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4810249536402666}
   - component: {fileID: 65215283148735358}
+  - component: {fileID: 114634635470356690}
   m_Layer: 0
   m_Name: nogaD_L
   m_TagString: LeftArm1
@@ -2181,6 +2183,19 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
+--- !u!114 &114140482602173050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1021028155931320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fabe15981c092e444890ff4a4e3e8694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pivotCamera: {fileID: 0}
+  playerGunObj: {fileID: 0}
 --- !u!114 &114261830473798624
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2192,7 +2207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a70499dbf3eb6449e94db2b89c08a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyController1Script: {fileID: 114989788457784682}
+  enemyObj: {fileID: 1036324647121686}
 --- !u!114 &114268688928419946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2220,7 +2235,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8048ecc2bc08711479e3b2fae7cfbeba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyController1Script: {fileID: 114989788457784682}
+  enemyObj: {fileID: 1036324647121686}
+--- !u!114 &114634635470356690
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1376349151874604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fabe15981c092e444890ff4a4e3e8694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pivotCamera: {fileID: 0}
+  playerGunObj: {fileID: 0}
 --- !u!114 &114671289013060892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2259,7 +2287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b2431c6900c7c48b0de44ed159464f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyController1Script: {fileID: 114989788457784682}
+  enemyObj: {fileID: 1036324647121686}
 --- !u!114 &114741531775060540
 MonoBehaviour:
   m_ObjectHideFlags: 1

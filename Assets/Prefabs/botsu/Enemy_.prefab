@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 195682866292364392}
   - component: {fileID: 114401804113878684}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1883,10 +1883,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coreObj: {fileID: 1293117303839440}
-  explosion: {fileID: 1717213512574258, guid: 0f0cd1c0b2a12f043867906471c8c9cf, type: 2}
   curHp: 100
   hpGauge: {fileID: 114490770575824458}
+  explosion: {fileID: 1717213512574258, guid: 0f0cd1c0b2a12f043867906471c8c9cf, type: 2}
   enemySpeed: 0.2
+  wanderRadius: 0
+  wanderTimer: 0
+  agentEnemy: {fileID: 0}
 --- !u!114 &114401804113878684
 MonoBehaviour:
   m_ObjectHideFlags: 1

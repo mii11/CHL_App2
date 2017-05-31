@@ -103,6 +103,7 @@ public class EnemyController1 : MonoBehaviour {
 			}
 		}
 	}
+		
 
 //	void OnTriggerExit(Collider other){
 //
@@ -130,7 +131,7 @@ public class EnemyController1 : MonoBehaviour {
 			Destroy (AttackLeftZone);
 			Destroy (AttackRightZone);
 			Destroy (enemyHp, 5.0f);
-			Manager.instance.curEnemyLife -= 1;
+			GameManager.managerInstance.curEnemyLife -= 1;
 			isDead = true;
 		}
 	}
@@ -162,7 +163,7 @@ public class EnemyController1 : MonoBehaviour {
 	//要編集！うまく、いってない
 	//	void HpPosition(){
 	//		//positionではなく、向きを取得すること
-	//★		GameObject gun = Manager.instance.gun.GetComponent<GameObject> ().gameObject;
+	//★		GameObject gun = .managerInstance.gun.GetComponent<GameObject> ().gameObject;
 	//		print ("gun.name" + gun.name);
 	//
 	//		Vector3 gunPos;

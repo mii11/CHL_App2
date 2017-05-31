@@ -17,6 +17,8 @@ TagManager:
   - LeftArm4
   - RightArm4
   - EnemyHead
+  - Gun
+  - Enemies
   layers:
   - Default
   - TransparentFX

@@ -43,7 +43,6 @@ public class EnemyController3 : MonoBehaviour {
 
 		enemyAnimation = GetComponentInChildren<Animation>();
 
-		motionInterval = 0.0f;
 		enemyHp = hpGauge.transform.parent.gameObject;
 		enemySpeed = 0.8f;
 
@@ -150,7 +149,7 @@ public class EnemyController3 : MonoBehaviour {
 			Destroy (enemyBoxCollider);
 			Destroy (coreCapsuleCollider);
 			Destroy (enemyHp, 3.0f);
-			Manager.instance.curEnemyLife -= 1;
+			GameManager.managerInstance.curEnemyLife -= 1;
 			isDead = true;
 		}
 	}
@@ -159,7 +158,7 @@ public class EnemyController3 : MonoBehaviour {
 	//要編集！うまく、いってない
 	//	void HpPosition(){
 	//		//positionではなく、向きを取得すること
-	//★		GameObject gun = Manager.instance.gun.GetComponent<GameObject> ().gameObject;
+	//★		GameObject gun = GameManager.managerInstance.gun.GetComponent<GameObject> ().gameObject;
 	//		print ("gun.name" + gun.name);
 	//
 	//		Vector3 gunPos;
