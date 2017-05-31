@@ -15,7 +15,6 @@ public class CoreController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-//		print ("CoreのColliderのにあたった");
 
 		if (other.gameObject.tag == "PlayerBullet") {
 			if (gameObject.tag == "Core") {
